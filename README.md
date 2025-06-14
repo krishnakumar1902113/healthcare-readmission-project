@@ -1,85 +1,112 @@
 # healthcare-readmission-project
 "Healthcare Readmission Analysis using SQL and Power BI"
-# Healthcare Readmission Analysis Project
+# 📊 Healthcare Readmission Analysis (Diabetes Dataset)
 
-## 📊 Project Overview
-
-This project analyzes hospital readmission data for diabetic patients to identify key factors contributing to readmission and provides actionable recommendations for healthcare providers. The primary goal is to assist healthcare administrators in reducing readmission rates and improving patient outcomes.
+> **Comprehensive End-to-End Data Analytics Project using SQL and Power BI**
 
 ---
 
-## 📁 Dataset
+## 📌 Project Objective
+
+The primary objective of this project is to analyze patient readmissions for diabetic patients using real-world hospital data. The analysis focuses on:
+
+- Identifying key demographic, clinical, and operational drivers of readmission
+- Providing actionable recommendations to minimize readmission risks
+- Demonstrating practical SQL querying, database design, and dashboard development with Power BI
+
+---
+
+## 🗄️ Dataset Overview
 
 - **Dataset Name**: diabetic_cleaned.csv
-- **Source**: Diabetes Readmission Dataset (Educational Sample)
-- **Records**: 100,000+ patient encounters
-- **Key Features**:
-  - Patient demographics (age, gender, race)
-  - Hospital admission and discharge information
-  - Clinical diagnoses and procedures
-  - Medications prescribed
-  - Readmission status (`readmitted`)
+- **Records**: ~100,000 patient encounters
+- **Features**:  
+    - Patient demographics: Age, Race, Gender
+    - Admission information: Admission type, discharge disposition, source
+    - Clinical data: Diagnoses, Procedures, Number of medications, Lab procedures
+    - Medications: Medication prescriptions and changes
+    - Readmission outcome: `readmitted` column
 
 ---
 
-## 🏗️ Database Schema
-
-The dataset was loaded into MySQL with the following table structure:
+## 🏷️ Database Schema (MySQL)
 
 - **Table Name**: `diabetic_readmission`
-- **Columns**: 50+ fields (demographics, clinical, operational, medications)
-- **Data Types**: BIGINT, INT, VARCHAR
+- **Total Columns**: 50+
+- **Key Data Types**: BIGINT, INT, VARCHAR
 
-Full schema provided in `diabetic_readmission_full_project.sql`
+> Full schema, table creation script, and sample data are included in [`diabetic_readmission_full_project.sql`](./diabetic_readmission_full_project.sql)
 
 ---
 
-## 🛠️ Tools & Technologies
+## ⚙️ Tools & Technologies
 
-- **SQL (MySQL)**: Data loading, cleaning, and analytical queries
-- **Power BI**: Dashboard development and visualization
-- **Python**: (Optional for initial data preparation)
-- **DB-Fiddle**: Used for SQL query testing (cloud-based)
+| Tool | Purpose |
+| ---- | ------- |
+| **MySQL** | Data Storage, Table Creation, SQL Querying |
+| **Power BI Desktop** | Interactive Dashboard Development |
+| **Python (Optional)** | Initial Data Cleaning & Preparation |
+| **DB-Fiddle (MySQL 8.0)** | Online SQL Testing Platform |
 
 ---
 
 ## 🔎 Analytical Approach
 
-### SQL Analysis Performed:
+**SQL Analysis Performed:**
+- ✅ Overall Readmission Rate Calculation
+- ✅ Length of Stay (LOS) vs. Readmission
+- ✅ Diagnosis Codes Impact Analysis
+- ✅ Medications Impact & Medication Changes
+- ✅ Admission, Discharge & Operational Efficiency Analysis
 
-- Total Readmission Rate
-- Length of Stay vs. Readmission
-- Diagnosis Impact on Readmission
-- Medication Impact on Readmission
-- Operational Efficiency (Admission Type, Discharge, Admission Source)
-
-### Power BI Dashboard Includes:
-
-- **Page 1**: Executive Summary
-- **Page 2**: Demographic Impact
-- **Page 3**: Clinical Factors (Diagnoses, Medications)
-- **Page 4**: Operational Efficiency
-
----
-
-## 📈 Key Findings
-
-- Patients aged **70-80** showed higher readmission rates.
-- Emergency admissions and certain discharge dispositions are highly correlated with readmissions.
-- Certain diagnosis codes (`250.02`, `250.13`) appear most frequently in readmitted patients.
-- Patients experiencing **medication changes** (`change = 'Ch'`) during hospitalization had a higher probability of readmission.
-- Increased length of stay also correlates with increased readmission risk.
+**Power BI Dashboard Includes:**
+- 📊 Executive Summary KPIs
+- 📊 Demographic Impact (Age, Gender, Race)
+- 📊 Clinical Factors (Diagnoses, Medications, Procedures)
+- 📊 Operational Efficiency (Admission, Discharge, Admission Source)
+- 🎛️ Full slicers and filters for dynamic exploration
 
 ---
 
-## 💡 Actionable Recommendations
+## 📈 Key Insights
 
-1. **Implement targeted follow-up programs for elderly patients**, particularly those in the 70-80 age group.
-2. **Strengthen medication reconciliation processes** for patients whose medications are changed during their hospital stay.
-3. **Introduce enhanced discharge planning protocols** for high-risk admission and discharge types to reduce unnecessary readmissions.
-4. **Monitor patients with specific chronic diagnoses (e.g., diabetes codes 250.02, 250.13)** for closer post-discharge care.
+- Patients aged **70-80** show significantly higher readmission risk.
+- Emergency admissions contribute heavily to readmission rates.
+- Certain discharge dispositions (discharged to other facilities) show operational inefficiencies.
+- Medication changes (`change = 'Ch'`) during hospitalization are associated with elevated readmission probabilities.
+- Chronic diagnoses such as `250.02` and `250.13` (diabetes-related codes) dominate readmission cases.
+- Length of hospital stay correlates directly with likelihood of readmission.
 
 ---
 
-## 🔗 Repository Structure
+## 💡 Recommendations
+
+1. **Implement Targeted Post-Discharge Programs**  
+   Focus on patients aged 70+ and those discharged to skilled nursing or long-term care facilities.
+
+2. **Enhance Medication Reconciliation Processes**  
+   Closely monitor patients whose medications are adjusted during hospitalization to avoid adverse events leading to readmissions.
+
+3. **Clinical Protocol Review for Chronic Cases**  
+   Implement specialized care pathways for patients with diabetes (ICD codes `250.02`, `250.13`) to prevent unnecessary readmissions.
+
+4. **Operational Improvements**  
+   Review emergency admission workflows to prevent avoidable emergency-based readmissions.
+
+---
+
+## 📂 Repository Structure
+
+```bash
+/
+├── README.md
+├── data/
+│   └── diabetic_cleaned.csv
+├── sql/
+│   └── diabetic_readmission_full_project.sql
+├── powerbi/
+│   └── Diabetic_Readmission_Dashboard.pbix
+└── (Optional) python/
+    └── python_cleaning_script.ipynb
+
 
