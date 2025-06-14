@@ -103,7 +103,7 @@ The primary objective of this project is to analyze patient readmissions for dia
 ├── data/
 │   └── diabetic_cleaned.csv
 ├── sql/
-│   └── diabetic_readmission_full_project.sql
+│   └── (/diabetic_readmission_full_project.sql)
 ├── powerbi/
     └── Diabetic_Readmission_Dashboard.pbix
 
